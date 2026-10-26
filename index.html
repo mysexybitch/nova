@@ -20,7 +20,13 @@ nav .w{display:flex;justify-content:space-between;align-items:center}
 .btn{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,.3);border-radius:99px;padding:10px 20px;font-size:14px;transition:.2s}.btn:hover{background:var(--tx);color:var(--bg)}
 .btn.p{background:var(--ac);color:var(--bg);border-color:var(--ac)}.btn.p:hover{background:#fff}
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;border-bottom:1px solid var(--line)}
-#hero-canvas{position:absolute;inset:0;z-index:0}
+#hero-canvas{position:absolute;inset:0;z-index:1}
+#data-rain{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.1}
+#hero-canvas{pointer-events:none}
+h1 .tw-c{display:inline-block;width:.5em;height:.82em;margin-left:.06em;vertical-align:-.04em;background:var(--ac);box-shadow:0 0 12px rgba(125,255,179,.5);animation:twb 1s steps(1) infinite}
+@keyframes twb{50%{opacity:0}}
+h1.tw-on .tw-ch{visibility:hidden}h1 .tw-ch.v{visibility:visible}
+
 .hero .in{position:relative;z-index:2;padding:120px 24px 80px}.hero .k{justify-content:center}
 h1{font-size:clamp(46px,8.5vw,112px);font-weight:300;line-height:1.02;letter-spacing:-.03em}h1 em,h2 em{font-style:normal;color:var(--ac)}
 .hero p{max-width:720px;margin:22px auto 32px;color:var(--mu);font-size:15px}.ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
@@ -53,6 +59,7 @@ footer{padding:36px 0}footer .w{display:flex;justify-content:space-between;align
 <body>
 <nav><div class="w"><a class="logo" href="index.html#">NOVA</a><div class="pill"><a href="index.html#process">Process</a><a href="index.html#services">Services</a><a href="index.html#contact">Contact ↗</a></div><a class="btn" href="index.html#contact">Start now</a></div></nav>
 <header class="hero">
+<canvas id="data-rain" aria-hidden="true"></canvas>
 <canvas id="hero-canvas"></canvas>
 <div class="in"><h1>Driving growth with <em>AI</em>.</h1>
 <p>We craft workflow automations and bespoke AI solutions for forward-thinking companies.</p>
@@ -219,6 +226,25 @@ window.addEventListener('resize', () => {
   camera.updateProjectionMatrix();
   renderer.setSize(window.innerWidth, window.innerHeight);
 });
+</script>
+<script>
+(function(){
+var rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+// Green data rain
+var c=document.getElementById('data-rain');if(c){var x=c.getContext('2d'),G='アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワン0123456789010101',fs=16,cols=[],w,h,last=0,raf;
+function rs(){var d=Math.min(window.devicePixelRatio||1,2),r=c.parentNode.getBoundingClientRect();w=r.width;h=r.height;c.width=w*d;c.height=h*d;x.setTransform(d,0,0,d,0,0);fs=w<600?14:16;var n=Math.ceil(w/fs);cols=[];for(var i=0;i<n;i++)cols.push(Math.random()*h/fs);x.fillStyle='#0a0f0c';x.fillRect(0,0,w,h);if(rm)st();}
+function g(){return G[Math.random()*G.length|0]}
+function st(){x.font=fs+'px monospace';x.fillStyle='#7dffb3';for(var i=0;i<cols.length;i++)for(var j=0;j<h/fs;j++)if(Math.random()<.35){x.globalAlpha=Math.random()*.8+.2;x.fillText(g(),i*fs,j*fs+fs)}x.globalAlpha=1}
+function fr(t){raf=requestAnimationFrame(fr);if(t-last<50)return;last=t;x.fillStyle='rgba(10,15,12,.12)';x.fillRect(0,0,w,h);x.font=fs+'px monospace';for(var i=0;i<cols.length;i++){var y=cols[i]*fs;x.fillStyle=Math.random()<.05?'#e9ffef':'#7dffb3';x.fillText(g(),i*fs,y);if(y>h&&Math.random()>.975)cols[i]=0;cols[i]+=.5}}
+rs();var to;window.addEventListener('resize',function(){clearTimeout(to);to=setTimeout(rs,150)});
+if(!rm){raf=requestAnimationFrame(fr);document.addEventListener('visibilitychange',function(){if(document.hidden)cancelAnimationFrame(raf);else{last=0;raf=requestAnimationFrame(fr)}})}}
+// Typing headline
+var h1=document.querySelector('.hero h1');if(!h1||rm)return;
+h1.setAttribute('aria-label',h1.textContent);var chs=[];
+(function wrap(n){Array.prototype.slice.call(n.childNodes).forEach(function(k){if(k.nodeType===3){var f=document.createDocumentFragment();k.textContent.split('').forEach(function(ch){var s=document.createElement('span');s.className='tw-ch';s.setAttribute('aria-hidden','true');s.textContent=ch;f.appendChild(s);chs.push(s)});n.replaceChild(f,k)}else wrap(k)})})(h1);
+var cur=document.createElement('span');cur.className='tw-c';cur.setAttribute('aria-hidden','true');h1.appendChild(cur);h1.classList.add('tw-on');
+var i=0;setTimeout(function step(){if(i<chs.length){chs[i++].classList.add('v');setTimeout(step,55+Math.random()*45)}else h1.classList.remove('tw-on')},400);
+})();
 </script>
 </body>
 </html>
