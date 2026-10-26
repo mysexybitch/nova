@@ -1,0 +1,100 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NOVA · Workflow automation &amp; AI solutions</title>
+<style>
+:root{--bg:#0a0f0c;--bg2:#0e1511;--line:rgba(255,255,255,.09);--tx:#e9eee9;--mu:#9aa69e;--ac:#b7d8b4;--ac2:#3ee08f}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font-family:"Inter","Helvetica Neue",Arial,sans-serif;font-weight:300;line-height:1.5;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.07;z-index:50;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+a{color:inherit;text-decoration:none}.w{max-width:1200px;margin:0 auto;padding:0 32px}
+.k{display:flex;align-items:center;gap:14px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ac);margin-bottom:26px}.k:before{content:"";width:34px;height:1px;background:var(--mu)}
+nav{position:fixed;top:0;left:0;right:0;z-index:40;padding:20px 0;background:linear-gradient(var(--bg),transparent)}
+nav .w{display:flex;justify-content:space-between;align-items:center}
+.logo{letter-spacing:.32em;font-size:17px;font-weight:400}
+.pill{display:flex;gap:4px;border:1px solid var(--line);border-radius:99px;padding:5px;background:rgba(255,255,255,.03);backdrop-filter:blur(8px)}
+.pill a{font-size:13px;padding:7px 15px;border-radius:99px;color:var(--mu)}.pill a:hover{color:var(--tx);background:rgba(255,255,255,.06)}
+.btn{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,.3);border-radius:99px;padding:10px 20px;font-size:14px;transition:.2s}.btn:hover{background:var(--tx);color:var(--bg)}
+.btn.p{background:var(--ac);color:var(--bg);border-color:var(--ac)}.btn.p:hover{background:#fff}
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;border-bottom:1px solid var(--line)}
+.orb{position:absolute;width:520px;height:520px;left:50%;top:46%;transform:translate(-50%,-50%);filter:blur(70px);opacity:.8;animation:f 12s ease-in-out infinite}
+.orb i{position:absolute;border-radius:50%}.orb i:nth-child(1){width:60%;height:60%;left:35%;top:10%;background:#22c77a}.orb i:nth-child(2){width:45%;height:45%;left:12%;top:40%;background:#c9624a;opacity:.7}.orb i:nth-child(3){width:40%;height:40%;left:45%;top:45%;background:#1f8f6a}
+@keyframes f{50%{transform:translate(-46%,-54%) scale(1.08)}}
+.arc{position:absolute;right:-12%;top:-18%;width:70vw;height:70vw;border-radius:50%;box-shadow:inset -18px 14px 30px -12px rgba(183,216,180,.55);opacity:.55}
+.stars{position:absolute;inset:0}.stars b{position:absolute;width:2px;height:2px;border-radius:50%;background:#fff;opacity:.5}
+.hero .in{position:relative;z-index:2;padding:120px 24px 80px}.hero .k{justify-content:center}
+h1{font-size:clamp(46px,8.5vw,112px);font-weight:300;line-height:1.02;letter-spacing:-.03em}h1 em,h2 em{font-style:normal;color:var(--ac)}
+.hero p{max-width:720px;margin:22px auto 32px;color:var(--mu);font-size:15px}.ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+section{padding:110px 0;border-bottom:1px solid var(--line)}
+h2{font-size:clamp(34px,5vw,58px);font-weight:300;line-height:1.08;letter-spacing:-.02em}
+.svc{display:grid;grid-template-columns:repeat(3,1fr);margin-top:20px}.svc div{padding:10px 28px 10px 0;border-right:1px solid var(--line);margin-right:28px}.svc div:last-child{border:0}
+.svc span{font-size:26px;color:var(--mu)}.svc h3{font-weight:400;font-size:21px;margin:14px 0 10px}.svc p{color:var(--mu);font-size:14px}
+.work{background:radial-gradient(80% 60% at 70% 30%,#15241b,var(--bg2))}.wg{display:grid;grid-template-columns:1fr 2fr;gap:50px;align-items:center}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{border:1px solid var(--line);border-radius:6px;overflow:hidden;background:#0b110d;transition:.3s}.card:hover{transform:translateY(-4px);border-color:rgba(183,216,180,.4)}
+.card .im{aspect-ratio:1/1;background:radial-gradient(120% 80% at 10% 100%,transparent 52%,rgba(183,216,180,.5) 54%,transparent 60%),radial-gradient(90% 70% at 100% 0,#2a3a30,#0b110d)}.card:nth-child(2) .im{background:radial-gradient(100% 90% at 90% 110%,transparent 55%,#ccd 57%,#556 65%,transparent 70%),#111}.card:nth-child(3) .im{background:radial-gradient(110% 110% at 0 100%,transparent 60%,rgba(183,216,180,.35) 62%,transparent 66%),#090c0a}
+.card div{padding:16px}.card small{font-size:10px;letter-spacing:.15em;color:var(--mu);text-transform:uppercase}.card h4{font-weight:400;margin-top:6px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:50px}.steps div{border-top:1px solid var(--line);padding-top:22px}.steps span{color:var(--ac);font-size:13px}.steps h3{font-weight:400;margin:8px 0}.steps p{color:var(--mu);font-size:15px}
+.app{position:relative;overflow:hidden}.app:after{content:"";position:absolute;right:-10%;top:-30%;width:60%;height:160%;background:radial-gradient(closest-side,rgba(62,224,143,.12),transparent);pointer-events:none}
+.ag{display:grid;grid-template-columns:2fr 1fr;gap:40px;align-items:center}.ag ul{list-style:none;border-left:1px solid var(--line);padding-left:24px}.ag li{color:#c8d1ca;padding:7px 0}
+.cta{text-align:center}.cta p{color:var(--mu);margin:20px auto 34px;max-width:520px}.tel{display:block;font-size:clamp(28px,4vw,44px);margin-bottom:28px;color:var(--ac)}
+footer{padding:36px 0}footer .w{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;color:var(--mu);font-size:13px}
+.r{opacity:0;transform:translateY(24px);transition:1s}.r.v{opacity:1;transform:none}
+@media(max-width:900px){.pill{display:none}.svc{grid-template-columns:1fr 1fr;gap:30px}.svc div{border:0;margin:0}.wg,.ag{grid-template-columns:1fr}.cards{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.w{padding:0 22px}.svc,.cards,.steps{grid-template-columns:1fr}.orb{width:340px;height:340px}section{padding:80px 0}nav .btn{padding:8px 14px;font-size:13px}}
+.idx{position:absolute;right:40px;bottom:40px;z-index:2;font-size:11px;color:var(--mu);border-left:1px solid var(--line);padding-left:10px;line-height:1.9}
+@media(max-width:560px){p br{display:none}}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:50px}.plans div{border:1px solid var(--line);border-radius:6px;padding:26px}.plans h3{font-weight:400;font-size:21px;margin-bottom:10px}.plans p{color:var(--mu);font-size:14px;margin-bottom:14px}.plans b{font-weight:400;color:var(--ac)}
+@media(max-width:900px){.plans{grid-template-columns:1fr}}
+
+.orb{animation:f 18s ease-in-out infinite,hue 30s ease-in-out infinite;will-change:transform}
+.orb i{will-change:transform}
+.orb i:nth-child(1){animation:m1 16s ease-in-out infinite alternate}
+.orb i:nth-child(2){animation:m2 21s ease-in-out infinite alternate}
+.orb i:nth-child(3){animation:m3 13s ease-in-out infinite alternate}
+.orb i:nth-child(4){width:38%;height:38%;left:20%;top:12%;background:#e8a48a;opacity:.35;animation:m4 24s ease-in-out infinite alternate}
+@keyframes m1{0%{transform:translate(0,0) scale(1)}50%{transform:translate(-18%,14%) scale(1.15)}100%{transform:translate(10%,22%) scale(.9)}}
+@keyframes m2{0%{transform:translate(0,0) scale(1)}50%{transform:translate(30%,-20%) scale(1.25)}100%{transform:translate(55%,10%) scale(1.05)}}
+@keyframes m3{0%{transform:translate(0,0) scale(1)}50%{transform:translate(-35%,-25%) scale(1.3)}100%{transform:translate(-10%,-45%) scale(.95)}}
+@keyframes m4{0%{transform:translate(0,0) scale(1)}50%{transform:translate(60%,40%) scale(1.2)}100%{transform:translate(20%,70%) scale(.9)}}
+@keyframes hue{0%,100%{filter:blur(70px) hue-rotate(0deg)}50%{filter:blur(70px) hue-rotate(-18deg)}}
+@media(max-width:560px){.orb{filter:blur(50px);animation:f 18s ease-in-out infinite}.orb i:nth-child(4){display:none}}
+@media(prefers-reduced-motion:reduce){.orb,.orb i{animation:none!important}}
+
+#process .steps{display:block;perspective:1200px;margin-top:40px}
+#process .steps>div{position:sticky;top:calc(14vh + var(--i)*26px);min-height:300px;margin:0 auto 38vh;max-width:820px;padding:44px 48px;border:1px solid rgba(183,216,180,.16);border-radius:22px;background:linear-gradient(145deg,#142019,#0b110d);box-shadow:0 30px 80px -30px rgba(0,0,0,.8),0 0 60px -20px rgba(62,224,143,.18);transform-origin:50% 100%;will-change:transform,opacity;display:grid;grid-template-columns:auto 1fr;gap:10px 40px;align-items:center;transform:rotateX(calc(var(--p,1)*-38deg + 0deg)) rotateY(calc(var(--p,1)*var(--dir,1)*14deg)) translateY(calc(var(--p,1)*120px)) scale(calc(1 - var(--p,1)*.12));opacity:calc(1 - var(--p,1)*.95)}
+#process .steps>div:last-child{margin-bottom:12vh}
+#process .steps span{grid-row:span 2;font-size:clamp(72px,11vw,150px);font-weight:200;line-height:1;letter-spacing:-.04em;background:linear-gradient(160deg,#b7d8b4,#3ee08f 55%,#e8a48a);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 22px rgba(62,224,143,.35))}
+#process .steps>div:nth-child(2) span{background:linear-gradient(160deg,#e8a48a,#c9624a 50%,#b7d8b4);-webkit-background-clip:text;background-clip:text;filter:drop-shadow(0 0 22px rgba(232,164,138,.35))}
+#process .steps h3{font-size:clamp(24px,3vw,34px);margin:0;align-self:end}
+#process .steps p{align-self:start;font-size:16px;max-width:440px}
+@media(max-width:700px){#process .steps>div{grid-template-columns:1fr;padding:30px 26px;min-height:0;top:calc(12vh + var(--i)*18px)}#process .steps span{grid-row:auto;font-size:84px}}
+@media(prefers-reduced-motion:reduce){#process .steps>div{transform:none!important;opacity:1!important;position:relative;top:auto;margin-bottom:24px}}
+</style></head><body>
+<nav><div class="w"><a class="logo" href="#">NOVA</a><div class="pill"><a href="#process">Process</a><a href="#services">Services</a><a href="#work">Work</a><a href="#plans">Plans</a><a href="#">Blog</a><a href="#contact">Contact ↗</a></div><a class="btn" href="#contact">Start now</a></div></nav>
+<header class="hero"><div class="arc"></div><div class="orb"><i></i><i></i><i></i><i></i></div>
+<div class="in"><h1>Driving growth with <em>AI</em>.</h1>
+<p>We craft workflow automations and bespoke AI solutions for forward-thinking companies.</p>
+<div class="ctas"><a class="btn p" href="#services">Our services</a><a class="btn" href="#contact">Get in touch ↗</a></div></div><div class="idx">01<br>05</div></header>
+<section id="process"><div class="w r"><div class="k">Process</div><h2>From bottleneck<br>to <em>automated.</em></h2><div class="steps">
+<div><span>01</span><h3>Find the friction</h3><p>We map how work actually flows today and pinpoint the repetitive, manual tasks that cost your team the most time.</p></div>
+<div><span>02</span><h3>Build the fix</h3><p>We design and build the automation or AI tool that removes that friction, connected to the software you already use.</p></div>
+<div><span>03</span><h3>Launch &amp; improve</h3><p>We roll it out with your team, monitor how it performs and keep refining it as your needs change.</p></div></div></div></section>
+<section id="services"><div class="w r"><div class="k">Services</div><div class="svc">
+<div><span>01</span><h3>Workflow automation</h3><p>Stop copying data between tools. We connect your apps and automate the repetitive steps in between.</p></div>
+<div><span>02</span><h3>Bespoke AI solutions</h3><p>Custom AI assistants and agents trained on your processes to handle questions, documents and routine decisions.</p></div>
+<div><span>03</span><h3>Integrations &amp; systems</h3><p>When off-the-shelf tools don’t fit, we build the internal app or integration that does.</p></div></div></div></section>
+<section class="work" id="work"><div class="w wg r"><div><div class="k">Work</div><h2>Problems<br>we’ve solved.</h2><p style="color:var(--mu);margin:20px 0 26px">[Placeholder: short intro to real case studies]</p><a class="btn" href="#">See all work →</a></div>
+<div class="cards"><a class="card"><div class="im"></div><div><small>[Category]</small><h4>[Case study 1]</h4><p>[Problem → solution]</p></div></a><a class="card"><div class="im"></div><div><small>[Category]</small><h4>[Case study 2]</h4><p>[Problem → solution]</p></div></a><a class="card"><div class="im"></div><div><small>[Category]</small><h4>[Case study 3]</h4><p>[Problem → solution]</p></div></a></div></div></section>
+<section id="plans"><div class="w r"><div class="k">Plans</div><h2>Start small.<br><em>Scale what works.</em></h2><div class="plans">
+<div><h3>[Plan 1 name]</h3><p>One workflow automated end to end — a focused first win.</p><b>[Price]</b></div>
+<div><h3>[Plan 2 name]</h3><p>A custom AI solution built around a specific process in your business.</p><b>[Price]</b></div>
+<div><h3>[Plan 3 name]</h3><p>Ongoing support: new automations, monitoring and improvements over time.</p><b>[Price]</b></div></div></div></section>
+<section class="cta app" id="contact"><div class="w r"><div class="k" style="justify-content:center">Contact</div><h2>Tell us what’s<br><em>slowing you down.</em></h2><p>Describe the task your team repeats every day. We’ll tell you how we’d automate it.</p><a class="tel" href="mailto:[email]">[email@domain]</a><div class="ctas"><a class="btn p" href="mailto:[email]">Start now</a><a class="btn" href="#services">Our services</a></div></div></section>
+<footer><div class="w"><span class="logo">NOVA</span><span>Driving growth with AI.</span><a class="btn" href="#contact">Get in touch ↗</a></div></footer>
+<script>
+const o=new IntersectionObserver(e=>e.forEach(x=>x.isIntersecting&&x.target.classList.add('v')),{threshold:.1});document.querySelectorAll('.r').forEach(x=>o.observe(x));
+
+(()=>{const c=[...document.querySelectorAll('#process .steps>div')];if(!c.length)return;c.forEach((e,i)=>{e.style.setProperty('--i',i);e.style.setProperty('--dir',i%2?-1:1)});
+if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;let t=0;
+const u=()=>{t=0;const h=innerHeight;c.forEach(e=>{const r=e.parentElement.children;const top=e.getBoundingClientRect().top;const st=parseFloat(getComputedStyle(e).top)||0;
+let p=(top-st)/(h*.75);p=Math.max(0,Math.min(1,p));p=p*p*(3-2*p);e.style.setProperty('--p',p.toFixed(4))})};
+addEventListener('scroll',()=>{t||(t=requestAnimationFrame(u))},{passive:true});addEventListener('resize',u);u()})();
+</script></body></html>
